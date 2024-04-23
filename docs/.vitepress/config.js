@@ -1,5 +1,3 @@
-import { diary } from "./diary";
-
 export default {
   lang: "zh",
   title: "前端笔记",
@@ -54,7 +52,6 @@ export default {
           { text: "NaiveUI官网", link: "https://www.naiveui.com/zh-CN/os-theme/components/button" },
         ],
       },
-      { text: "碎碎念", link: "/diary/20240423", activeMatch: "/diary/" },
     ],
     socialLinks: [{ icon: "github", link: "https://github.com/jspao/blog" }],
     sidebar: {
@@ -67,6 +64,7 @@ export default {
             items: [
               { text: "快速开始", link: "getting-started" },
               { text: "如何优雅的编写内容?", link: "markdown" },
+              { text: "搭建Vitepress文档", link: "vitepress" },
             ],
           },
         ],
@@ -121,17 +119,7 @@ export default {
             ],
           },
         ],
-      },
-      "/diary/": {
-        base: "/diary/",
-        items: [
-          {
-            text: "生活分享",
-            collapsed: false,
-            items: diary,
-          },
-        ],
-      },
+      }
     },
   },
 };
