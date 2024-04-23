@@ -8,6 +8,7 @@ export default {
       lazyLoading: true,
     },
   },
+  sitemap: 'https://jspao.com',
   head: [["link", { rel: "icon", type: "image/svg+xml", href: "/logo.svg" }]],
   themeConfig: {
     logo: "/logo.svg",
