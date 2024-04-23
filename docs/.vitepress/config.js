@@ -53,7 +53,7 @@ export default {
         ],
       },
     ],
-    socialLinks: [{ icon: "github", link: "" }],
+    socialLinks: [{ icon: "github", link: "https://github.com/jspao/blog" }],
     sidebar: {
       "/guide/": {
         base: "/guide/",
