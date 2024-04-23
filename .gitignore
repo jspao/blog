@@ -1,13 +1,6 @@
-.DS_Store
 node_modules
-/docs/.vitepress/dist
-/docs/.vitepress/cache
-
-# Editor directories and files
-.idea
-.vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+.DS_Store
+cache
+.cache
+.temp
+*.local

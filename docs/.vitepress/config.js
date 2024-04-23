@@ -1,8 +1,8 @@
 export default {
   lang: "zh",
-  title: "技术博客",
+  title: "技术分享",
   description: "项目，经验，代码片段",
-  base: "/docs/",
+  base: "/blog/",
   markdown: {
     image: {
       lazyLoading: true,
