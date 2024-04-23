@@ -1,14 +1,16 @@
+import { diary } from "./diary";
+
 export default {
   lang: "zh",
   title: "前端笔记",
-  description: "项目，经验，代码片段",
+  description: "项目，经验，笔记，代码片段",
   base: "/",
   markdown: {
     image: {
       lazyLoading: true,
     },
   },
-  sitemap: 'https://jspao.com',
+  sitemap: "https://jspao.com",
   head: [["link", { rel: "icon", type: "image/svg+xml", href: "/logo.svg" }]],
   themeConfig: {
     logo: "/logo.svg",
@@ -35,7 +37,7 @@ export default {
       text: "错误修正及完善",
     },
     footer: {
-      message: "一个真实程序员的工作与生活",
+      message: "山与海都很美，努力走出去",
       copyright: "© 2024 jspao.com",
     },
     nav: [
@@ -52,6 +54,7 @@ export default {
           { text: "NaiveUI官网", link: "https://www.naiveui.com/zh-CN/os-theme/components/button" },
         ],
       },
+      { text: "碎碎念", link: "/diary/20240423", activeMatch: "/diary/" },
     ],
     socialLinks: [{ icon: "github", link: "https://github.com/jspao/blog" }],
     sidebar: {
@@ -76,10 +79,12 @@ export default {
             collapsed: false,
             items: [
               { text: "Vue", link: "vue" },
+              { text: "Pinia", link: "pinia" },
               { text: "NaiveUI", link: "naiveui" },
               { text: "NestJS", link: "nestjs" },
               { text: "Nuxt", link: "nuxtjs" },
               { text: "Electron", link: "electronjs" },
+              { text: "UnoCSS", link: "unocss" },
             ],
           },
         ],
@@ -114,6 +119,16 @@ export default {
               { text: "Linux", link: "linux" },
               { text: "Docker", link: "docker" },
             ],
+          },
+        ],
+      },
+      "/diary/": {
+        base: "/diary/",
+        items: [
+          {
+            text: "生活分享",
+            collapsed: false,
+            items: diary,
           },
         ],
       },

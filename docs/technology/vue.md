@@ -1,7 +1,5 @@
 # Vue
 
-## UnoCSS
-
 ## 事件总线 mitt
 
 `eventBus` 替代品 `mitt`
