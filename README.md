@@ -1,13 +1,15 @@
-# 前端工作手册
+# JsPao 技术博客
 
-云智屏前端工作手册，分享、记录开发经验及常用代码片段。
+前端工作手册，分享、记录开发经验及常用代码片段。
 
 ## 运行说明
 
 推荐使用 `pnpm` 进行包管理
 
-- Node 版本 `18.20.0`
-- PNPM 版本 `8.15.6`
+![node](https://img.shields.io/badge/node-v18.20.0-green.svg)
+
+![pnpm](https://img.shields.io/badge/pnpm-v8.15.6-svg?color=%23f69220)
+
 
 ```sh
 # 本地运行
