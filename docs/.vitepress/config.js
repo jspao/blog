@@ -2,7 +2,7 @@ export default {
   lang: "zh",
   title: "技术博客",
   description: "项目，经验，代码片段",
-  base: "/",
+  base: "/docs/",
   markdown: {
     image: {
       lazyLoading: true,
