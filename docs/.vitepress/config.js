@@ -1,6 +1,6 @@
 export default {
   lang: "zh",
-  title: "Notes",
+  title: "前端笔记",
   description: "项目，经验，代码片段",
   base: "/",
   markdown: {
