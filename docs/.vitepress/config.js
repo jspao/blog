@@ -1,6 +1,6 @@
 export default {
   lang: "zh",
-  title: "技术分享",
+  title: "Notes",
   description: "项目，经验，代码片段",
   base: "/blog/",
   markdown: {
@@ -30,7 +30,7 @@ export default {
       next: "下一篇",
     },
     editLink: {
-      pattern: "https://git.quickjs.cn:8443/yzp/yzp-fe-wiki/-/tree/master/docs/:path",
+      pattern: "https://github.com/jspao/blog/tree/main/docs:path",
       text: "错误修正及完善",
     },
     footer: {
