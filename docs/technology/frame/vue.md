@@ -12,7 +12,7 @@
 </template>
 ```
 
-```vue [Script]
+```vue [JavaScript]
 <script setup>
 const props = defineProps({
   show: {

@@ -39,7 +39,7 @@ export default {
       copyright: "© 2024 jspao.com",
     },
     nav: [
-      { text: "技术栈", link: "/technology/frame/vue", activeMatch: "/technology/frame/" },
+      { text: "技术栈", link: "/technology/frame/vue", activeMatch: "/technology/" },
       { text: "工具使用", link: "/tools/git", activeMatch: "/tools/" },
       {
         text: "常用第三方入口",
@@ -94,6 +94,14 @@ export default {
               { text: "CSS", link: "basis/css" },
               { text: "HTML", link: "basis/html" },
               { text: "综合代码片段", link: "basis/code-snippet" },
+            ],
+          },
+          {
+            text: "快速建站技术",
+            collapsed: false,
+            items: [
+              { text: "PbootCMS", link: "cms/pbootcms" },
+              { text: "Typecho", link: "cms/typecho" },
             ],
           },
         ],
