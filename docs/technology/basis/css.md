@@ -6,7 +6,6 @@ CSS 能够对网页中元素位置的排版进行像素级精确控制，支持�
 
 ## BEM（Block, Element, Modifier）
 
-
 ### BEM 的简介
 
 - `B` 代表：Block（块），独立实体，独立的意义，每个页面都可以看做是多个 Block 组成
@@ -15,9 +14,9 @@ CSS 能够对网页中元素位置的排版进行像素级精确控制，支持�
 
 `BEM` 全称 `BlockElementModifier` 是由 Yandex（俄罗斯最著名的互联网企业）的开发团队提出的前端开发理论。通过 `Block`、`Element`、`Modifier` 来描述页面，通过 `__` 与 `--` 或 `_` 或 `-`连接 ，关键就是为了解决多人协作的命名问题。
 
-![Actions](assets/html/html_bem_0.jpg)
+![Actions](../assets/html/html_bem_0.jpg)
 
-![Actions](assets/html/html_bem_1.jpg)
+![Actions](../assets/html/html_bem_1.jpg)
 
 ### BEM 的基础使用
 
@@ -86,7 +85,6 @@ BEM 的命名规矩很容易记：`block-name__element-name--modifier-name`，�
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html,
 body,
 div,
@@ -175,7 +173,6 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,

@@ -2,13 +2,17 @@
 
 ## Vue3 Case iframe 监听
 
-```vue
+::: code-group
+
+```vue [Template]
 <template>
   <n-spin :show="loading" description="公网地址正在加载中,请耐心等待...">
     <iframe ref="iframeRef" class="cus-iframe" :src="iframeUrl" frameborder="0"></iframe>
   </n-spin>
 </template>
+```
 
+```vue [Script]
 <script setup>
 const props = defineProps({
   show: {
@@ -48,6 +52,8 @@ onMounted(() => {
 });
 </script>
 ```
+
+:::
 
 ## Vue Case mitt
 
