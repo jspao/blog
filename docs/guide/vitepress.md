@@ -312,3 +312,7 @@ jobs:
 6. 完成范例，所有操作结束之后如下如，可以点击 `Visit site` 访问 Github Pages 了
 
    ![Actions](assets/vitepress/vitepress_6.jpg)
+
+## 结语
+
+后续 vitepress 项目文档就可以实现 push 之后自动化部署了，省时省心省力！
