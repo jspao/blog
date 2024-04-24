@@ -1,6 +1,6 @@
 # 搭建 Vitepress 文档
 
-本文记录，利用 vitepress 从 0 开始搭建的步骤，最终部署到 Github Pages。
+本文记录，利用 vitepress 从 0 开始搭建的步骤，最终部署到 Github Pages，并通过自有域名访问。
 
 [官方文档](https://vitepress.dev/zh/guide/what-is-vitepress)
 
