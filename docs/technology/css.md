@@ -4,9 +4,214 @@
 
 CSS 能够对网页中元素位置的排版进行像素级精确控制，支持几乎所有的字体字号样式，拥有对网页对象和模型样式编辑的能力。
 
+## BEM（Block, Element, Modifier）
+
+
+### BEM 的简介
+
+- `B` 代表：Block（块），独立实体，独立的意义，每个页面都可以看做是多个 Block 组成
+- `E` 代表：Element（元素），block 的一部分，没有独立意义，是组件下的一个元素，多个元素形成一个组件
+- `M` 代表：Modifier （修饰符），block 或 element 上的标记，是描述 Block 或 Element 的属性或状态，同一 Block 或 Element 可以有多个 Modifier。
+
+`BEM` 全称 `BlockElementModifier` 是由 Yandex（俄罗斯最著名的互联网企业）的开发团队提出的前端开发理论。通过 `Block`、`Element`、`Modifier` 来描述页面，通过 `__` 与 `--` 或 `_` 或 `-`连接 ，关键就是为了解决多人协作的命名问题。
+
+![Actions](assets/html/html_bem_0.jpg)
+
+![Actions](assets/html/html_bem_1.jpg)
+
+### BEM 的基础使用
+
+BEM 的命名规矩很容易记：`block-name__element-name--modifier-name`，也就是模块名 + 元素名 + 修饰器名。
+
+#### 模块 Block
+
+没有前缀，多个单词用 `-` 连接，是对一个组件名抽象。
+
+```html
+<!-- 一个普通列表的a标签 -->
+<li><a class="li-a">...</a></li>
+<!-- 一个在导航栏的a标签 -->
+<li><a class="nav-li-a"></a></li>
+<!-- 一个被选中的在导航栏的a标签 -->
+<li><a class="nav-li-a is-active"></a></li>
+<!-- 一个在头部的图片 -->
+<header>
+  <img class="header-img" src="#" alt="#" />
+</header>
+```
+
+#### 元素 Element
+
+元素在模块之后，可以有多个层级，以 `__` 连接。element 也不是死板的，是根据具体的需求演变的，中间也可以使用 `-` 来演变。
+
+```html
+<li class="nav--main__item  jspao-nav--main__item"><a>...</a></li>
+<li class="nav--main__item  jspao-nav--main__item"><a>...</a></li>
+```
+
+```html
+<!-- 几个普通列表的a标签 -->
+<li>
+  <a class="li-a__item">...</a>
+  <a class="li-a__item">...</a>
+</li>
+<!-- 几个在导航栏的a标签 -->
+<li>
+  <a class="nav-li-a__item"></a>
+  <a class="nav-li-a__item"></a>
+</li>
+```
+
+#### 修饰 Modifier
+
+某元素、或者某模块特别的状态，必须有一个状态名和状态值，使用 `--` 或 `-` 链接
+
+主要针对的是 Block 本身，是对于 Block 做修饰。例如有：颜色、大小、用途
+
+```css
+.block-name_element-name--modifierName {
+  /* ... */
+}
+.blockName__elementName-modifierName {
+  /* ... */
+}
+```
+
 ## CSS Tools: Reset CSS
 
 `reset.css` 重置样式表的目的是减少浏览器在默认行高、边距和标题字体大小等方面的不一致【[传送门](https://meyerweb.com/eric/tools/css/reset/)】
+
+```css
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+```
 
 ## 文本溢出省略号
 

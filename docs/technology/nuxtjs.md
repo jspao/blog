@@ -1,3 +1,4 @@
-# NuxtJS
+# Nuxt3
 
-Nuxt3 https://nuxt.com/
+[官方入口](https://nuxt.com/)
+

@@ -83,21 +83,16 @@ export default {
               { text: "Nuxt", link: "nuxtjs" },
               { text: "Electron", link: "electronjs" },
               { text: "UnoCSS", link: "unocss" },
+              { text: "Sass", link: "sass" },
             ],
           },
-        ],
-      },
-      "/code-snippet/": {
-        base: "/code-snippet/",
-        items: [
           {
-            text: "代码片段",
+            text: "基础技术栈",
             collapsed: false,
             items: [
-              { text: "JavaScript", link: "js" },
+              { text: "Javascript", link: "js" },
               { text: "CSS", link: "css" },
               { text: "HTML", link: "html" },
-              { text: "Demo", link: "demo" },
             ],
           },
         ],
@@ -119,7 +114,7 @@ export default {
             ],
           },
         ],
-      }
+      },
     },
   },
 };
