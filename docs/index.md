@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: "JSPao"
-  text: "真实开发经验分享"
+  text: "日常开发经验分享"
   tagline: 一个程序员的工作与生活
   actions:
     - theme: brand
