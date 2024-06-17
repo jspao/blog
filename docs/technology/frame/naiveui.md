@@ -46,7 +46,7 @@ const tabCol = [
 ];
 ```
 
-## n-tree 组件实例
+## n-tree 懒加载实例
 
 ::: code-group
 
@@ -118,6 +118,179 @@ function onAdd(e, type, option) {
 onMounted(async () => {
   await getList();
 });
+```
+
+:::
+
+## n-table 实例
+
+::: code-group
+
+```vue [Vue]
+<template>
+  <n-data-table :remote="true" :pagination="pagination" :paginate-single-page="false" :columns="columns"
+  @update:checked-row-keys="handleCheck" :loading="loading" :data="list" :row-key="(row) => row.dictCode">
+    <template #empty>
+      <div>
+        <div>
+          <img :src="nodata" alt="nodata" class="w-180px" />
+        </div>
+        <div class="text-center text-12 c-#00000040">
+          暂无数据
+        </div>
+      </div>
+    </template>
+  </n-data-table>
+</template>
+```
+
+```js [JavaScript]
+// 无数据时候的占位图，图片路径自行定义
+const nodata = new URL("../../../assets/common/nodata.png", import.meta.url).href;
+// 分页，动态table一定要是开启remote为true
+const pagination = reactive({
+  pageNum: 1,
+  pageSize: 15,
+  itemCount: 0,
+  pageSizes: [15, 30, 60, 90, 120],
+  showSizePicker: true,
+  onChange: (page) => {
+    pagination.pageNum = page;
+    getList()
+  },
+  onUpdatePageSize: (size) => {
+    pagination.pageSize = size
+    pagination.pageNum = 1
+    getList()
+  },
+})
+// 加载及数据字段
+const loading = ref(false)
+const list = ref([])
+const selectKeys = ref([])
+// 涵盖序号及选项
+const columns = [
+  {
+    type: 'selection',
+  },
+  {
+    title: "序号",
+    key: "key",
+    render: (row, index) => {
+      return index + 1;
+    }
+  },
+  {
+    title: '字典标签',
+    key: 'dictLabel',
+    render: (row) => {
+      return h(NTag, {
+        bordered: false,
+        type: row.listClass,
+      }, {
+        default: () => row.dictLabel
+      })
+    }
+  },
+  {
+    title: '创建时间',
+    key: 'createTime'
+  },
+  {
+    title: '操作',
+    key: 'action',
+    render(row) {
+      return [
+        h(NSpace, {}, {
+          default: () => [
+            h(NButton, { type: 'primary', strong: true, secondary: true, onClick: () => onEdit(row) }, { default: () => '编辑' }),
+            h(NButton, { type: 'error', strong: true, secondary: true, onClick: () => handleDelete(row) }, { default: () => '删除' }),
+          ]
+        })
+
+      ]
+    }
+  },
+]
+// 操作方法
+const onEdit = () => {}
+const handleDelete = () => {}
+// 选项收集函数
+const handleCheck = (select) => {
+  selectKeys.value = select
+}
+```
+
+:::
+
+## n-model 实例
+
+重点是结构，自由编排内容是自由发挥的区块，其余的采用通用样式编写
+
+::: code-group
+
+```vue [Vue]
+<template>
+  <n-modal v-model:show="showModal" :trap-focus="false">
+    <div class="bg-white">
+      <div class="f-b-c p-16 bg-#f5f5f5">
+        <div>{{ modalTitle }}</div>
+        <div>
+          <n-button text @click="handleClose">
+            <template #icon>
+              <div class="i-ph:x-light"></div>
+            </template>
+          </n-button>
+        </div>
+      </div>
+      <div class="w-500 p-16">
+        <!-- 自由编排内容: start -->
+        <n-form ref="formRef" :model="model" :rules="rules" label-placement="left" label-width="auto">
+          <n-form-item label="字典类型" path="dictType">
+            <n-input v-model:value="model.dictType" disabled placeholder="请输入字典类型" />
+          </n-form-item>
+          <n-form-item label="显示排序" path="dictSort">
+            <n-input-number v-model:value="model.dictSort" :min="0" placeholder="请输入显示排序" />
+          </n-form-item>
+          <n-form-item label="备注" path="remark" :show-feedback="false">
+            <n-input v-model:value="model.remark" type="textarea" placeholder="请输入备注" />
+          </n-form-item>
+        </n-form>
+        <!-- 自由编排内容: end -->
+      </div>
+      <div class="f-b-c py-8 px-16 bg-#f5f5f5">
+        <div></div>
+        <div>
+          <n-space>
+            <n-button type="primary" :loading="modelLoading" @click="handleConfirm">确认</n-button>
+            <n-button type="error" :loading="modelLoading" @click="handleClose">取消</n-button>
+          </n-space>
+        </div>
+      </div>
+    </div>
+  </n-modal>
+</template>
+```
+
+```js [JavaScript]
+const showModal = ref(false)
+const modalTitle = ref('新增字典数据')
+const formRef = ref()
+const model = ref({})
+const rules = {
+  dictType: {
+    required: true,
+    trigger: ["blur", "input"],
+    message: "请输入字典类型"
+  },
+  // 这里有个知识点就是input-number组件的校验类型应该是number
+  dictSort: {
+    type: "number",
+    required: true,
+    trigger: ["blur", "change"],
+    message: "请输入显示排序"
+  },
+}
 ```
 
 :::

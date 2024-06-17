@@ -116,12 +116,12 @@ Wiki 中右侧目录是从二级标题开始计算的
 **输入**
 
 ```
-![在这里插入图片描述](https://yzpdev.ssl.ysten.com/logo.png)
+![在这里插入图片描述](https://jspao.com/home-logo.webp)
 ```
 
 **输出**
 
-![在这里插入图片描述](https://yzpdev.ssl.ysten.com/logo.png)
+![在这里插入图片描述](https://jspao.com/home-logo.webp)
 
 ## 文字风格
 

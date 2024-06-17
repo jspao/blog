@@ -90,7 +90,7 @@ export default {
             text: "基础技术栈",
             collapsed: false,
             items: [
-              { text: "Javascript", link: "basis/js" },
+              { text: "JavaScript", link: "basis/js" },
               { text: "CSS", link: "basis/css" },
               { text: "HTML", link: "basis/html" },
               { text: "综合代码片段", link: "basis/code-snippet" },

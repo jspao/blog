@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: "JSPao"
+  name: "JS Pao"
   text: "日常开发经验分享"
   tagline: 一个程序员的工作与生活
   actions:
