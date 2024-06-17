@@ -110,11 +110,9 @@ async function getList() {
     treeData.value = result.map((item) => ({ ...item, children: undefined, isLeaf: false }));
   } catch (error) {}
 }
-
 function onAdd(e, type, option) {
   e.stopPropagation();
 }
-
 onMounted(async () => {
   await getList();
 });

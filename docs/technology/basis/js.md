@@ -67,3 +67,10 @@ downloadCode() {
     a.dispatchEvent(event)
 }
 ```
+
+## jQuery
+
+[官方入口](https://jquery.com/)
+
+jQuery 是一个轻量级的 JavaScript 库，它简化了 HTML 文档的获取和操作，提供了事件处理、动画效果、Ajax 请求等功能。
+
