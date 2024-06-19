@@ -212,7 +212,29 @@ const columns = [
 ]
 // 操作方法
 const onEdit = () => {}
-const handleDelete = () => {}
+const handleDelete = async (row) => {
+  let ids = row.dictCode || selectKeys.value.join(',')
+  const d = $dialog.warning({
+    title: '删除警告',
+    content: `您确定要删除【${ids}】? 删除后将抹除该数据在系统中的记录!`,
+    positiveText: '确定',
+    negativeText: '取消',
+    autoFocus: false,
+    onPositiveClick: async () => {
+      d.loading = true
+      try {
+        const { msg } = await deleteDictItemApi(ids)
+        $message.success(msg)
+        await getList()
+      } catch (err) {
+        d.loading = false
+      }
+    },
+    onNegativeClick: () => {
+      d.loading = false
+    },
+  })
+}
 // 选项收集函数
 const handleCheck = (select) => {
   selectKeys.value = select
