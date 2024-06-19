@@ -211,7 +211,13 @@ const columns = [
   },
 ]
 // 操作方法
-const onEdit = () => {}
+const onEdit = async (row) => {
+  showModal.value = true
+  modalTitle.value = '编辑字典数据'
+  const { data } = await getDictItemDetailApi(row.dictCode)
+  model.value = data
+}
+// 删除方法
 const handleDelete = async (row) => {
   let ids = row.dictCode || selectKeys.value.join(',')
   const d = $dialog.warning({
@@ -310,6 +316,26 @@ const rules = {
     trigger: ["blur", "change"],
     message: "请输入显示排序"
   },
+}
+// model 或 单独的form提交实例
+const handleConfirm = () => {
+  e.preventDefault();
+  formRef.value?.validate(async (errors) => {
+    if (!errors) {
+      modelLoading.value = true
+      try {
+        const { msg } = model.value.id ? await updateAppAuthListApi(model.value) : await addAppAuthListApi(model.value)
+        $message.success(msg);
+        await getList()
+        showModal.value = false
+        modelLoading.value = false
+      } catch (error) {
+        modelLoading.value = false
+      }
+    } else {
+      console.log(errors);
+    }
+  });
 }
 ```
 
