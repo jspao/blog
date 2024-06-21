@@ -318,7 +318,7 @@ const rules = {
   },
 }
 // model 或 单独的form提交实例
-const handleConfirm = () => {
+const handleConfirm = (e) => {
   e.preventDefault();
   formRef.value?.validate(async (errors) => {
     if (!errors) {
