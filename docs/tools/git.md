@@ -143,3 +143,37 @@ git fetch upstream
 ```sh
 git rebase upstream/master origin/master
 ```
+
+## 代码回滚并以新的分支进行提交
+
+1. 查看git commit日志 找到想要回滚的记录
+
+```sh
+git log
+```
+
+2. 回滚分支指定的 commitID 为当前提交的标识（SHA-1）
+
+``` sh
+git reset --hard commitID
+```
+
+3. 创建一个新的分支，branchName 为新分支名称
+
+``` sh
+git branch branchName
+```
+
+4. 切换到新的分支
+
+``` sh
+git checkout branchName
+```
+
+5. 提交回退好的代码到远程分支，branchName 为本地分支名称
+
+``` sh
+git push <远程主机名> <branchName>:<远程分支名称>
+```
+
+**示例** git push origin branchname:branchname 将本地 branchname 分支提交到远程 origin 主机上的 branchname 分支，远程分支会自动创建的
