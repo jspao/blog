@@ -74,3 +74,28 @@ downloadCode() {
 
 jQuery 是一个轻量级的 JavaScript 库，它简化了 HTML 文档的获取和操作，提供了事件处理、动画效果、Ajax 请求等功能。
 
+## 动态将 CSS 变量设置为内联样式
+
+``` html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper Theme Color Example</title>
+</head>
+<body>
+    <div id="mySwiper" class="swiper-container">
+        <!-- Swiper content goes here -->
+    </div>
+
+    <script>
+        // 选择目标元素
+        var swiperContainer = document.getElementById('mySwiper');
+
+        // 动态添加 CSS 变量
+        swiperContainer.style.setProperty('--swiper-theme-color', '#ff0000'); // 红色
+    </script>
+</body>
+</html>
+```
