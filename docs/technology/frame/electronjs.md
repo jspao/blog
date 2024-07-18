@@ -5,3 +5,5 @@
 ## 优秀开源项目
 
 [Electron-Egg](https://github.com/dromara/electron-egg)
+
+[Electron-Vite](https://cn.electron-vite.org/)
