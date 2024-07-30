@@ -14,6 +14,13 @@ Yarn 是一个软件包管理器，还可以作为项目管理工具。无论你
 
 NPM 的全称是 Node Package Manager，是一个 `NodeJS 包管理和分发工具`，已经成为了非官方的发布 Node 模块（包）的标准。【[传送门](https://www.npmjs.com/)】
 
+## 解决npm install -g yarn后无法识别问题
+
+首次安装yarn时可能会提示 yarn 无法加载文件，这个可能是系统禁止脚本
+
+1. 可以搜索Windows -> PowerShell并且以管理员身份打开
+2. 输入命令行 `set-ExecutionPolicy RemoteSigned` 选择Y
+
 ## 解决 sharp: Command failed 问题
 
 - 报错原因：node 无法下载相应的 module，比如 electron 或者 sharp
