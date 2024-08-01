@@ -113,6 +113,7 @@ export default {
             text: "工具使用",
             collapsed: false,
             items: [
+              { text: "日常笔记", link: "common" },
               { text: "包管理工具", link: "package" },
               { text: "Git", link: "git" },
               { text: "pm2", link: "pm2" },
