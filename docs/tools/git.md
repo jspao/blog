@@ -177,3 +177,9 @@ git push <远程主机名> <branchName>:<远程分支名称>
 ```
 
 **示例** git push origin branchname:branchname 将本地 branchname 分支提交到远程 origin 主机上的 branchname 分支，远程分支会自动创建的
+
+## 强制覆盖远程仓库
+
+```sh
+git push -f --set-upstream origin master:master
+```
