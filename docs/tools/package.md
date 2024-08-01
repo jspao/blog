@@ -16,6 +16,8 @@ NPM 的全称是 Node Package Manager，是一个 `NodeJS 包管理和分发工�
 
 ## 解决老项目依赖版本对齐问题
 
+原因：npm 升级到 7.x以上后，会出现上游依赖冲突；`–legacy-peer-deps`：安装时忽略所有 `peerDependencie`，默认使用npm 4-6版本的安装模式，安装过程中是会跳过对等依赖项。
+
 ``` sh
 npm i --legacy-peer-deps
 ```
