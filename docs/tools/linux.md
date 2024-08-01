@@ -6,3 +6,8 @@ Linux 常用基本命令
 ```sh
 rm -rf *
 ```
+
+- 解压文件
+```sh
+unzip xxx.zip
+```
