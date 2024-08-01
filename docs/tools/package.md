@@ -14,6 +14,12 @@ Yarn 是一个软件包管理器，还可以作为项目管理工具。无论你
 
 NPM 的全称是 Node Package Manager，是一个 `NodeJS 包管理和分发工具`，已经成为了非官方的发布 Node 模块（包）的标准。【[传送门](https://www.npmjs.com/)】
 
+## 解决老项目依赖版本对齐问题
+
+``` sh
+npm i --legacy-peer-deps
+```
+
 ## 解决npm install -g yarn后无法识别问题
 
 首次安装yarn时可能会提示 yarn 无法加载文件，这个可能是系统禁止脚本
