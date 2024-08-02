@@ -24,3 +24,7 @@ git bash 进入指定工程，然后执行命令 `find . -name "._*"|xargs rm`
   -  `sudo vi /etc/hosts`
   -  输入本机密码后，打开hosts文件，键盘输入 i （插入），修改hosts文件后，按 esc 键退出,再按shift+：键，再输入w和q，保存退出
   -  不保存退出，则按q和！键
+
+## UI设计
+
+- DIN Alternate 用在数字上，很好用
