@@ -2,6 +2,42 @@
 
 JavaScript（简称“JS”）是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。
 
+## 对象结构排除特定字段
+
+如果你希望在构建 item 对象时，从 ele 中排除一些特定字段，可以使用解构赋值和对象扩展运算符来实现这一点。
+
+下面是一个示例，假设你希望排除 ele 中的某些字段（例如 excludeField1 和 excludeField2）：
+
+```js
+const { excludeField1, excludeField2, ...rest } = ele;
+const item = { ...rest, id: 123 };
+```
+### 解释
+
+1. 首先使用解构赋值从 ele 对象中提取你想排除的字段 (excludeField1 和 excludeField2)。
+2. 剩余的字段保存在 rest 对象中。
+3. 然后使用 ...rest 来创建 item 对象，并同时添加或覆盖其他字段（例如 id: 123）。
+
+### 示例代码
+
+```js
+const ele = {
+  name: 'Example',
+  value: 42,
+  excludeField1: 'Exclude me 1',
+  excludeField2: 'Exclude me 2',
+  anotherField: 'Keep me'
+};
+
+// 排除 excludeField1 和 excludeField2
+const { excludeField1, excludeField2, ...rest } = ele;
+const item = { ...rest, id: 123 };
+
+console.log(item);
+// 输出：{ name: 'Example', value: 42, anotherField: 'Keep me', id: 123 }
+```
+
+
 ## H5 Copy 功能兼容多机型
 
 ```javascript
