@@ -46,6 +46,64 @@ const tabCol = [
 ];
 ```
 
+## h 函数动态渲染组件
+
+这里有一个知识点就是v-model的渲染，具体看 `onUpdate:value` 例子，这仅仅是一层链式结构的表单，如果存在深层次链式结构表单的话，需要自行拓展一下
+
+::: code-group
+
+``` vue [Vue]
+<n-collapse-item title="字段匹配" name="field">
+  <template v-for="item in fieldOptions" :key="item.id">
+    <n-form-item :path="item.propKey"
+      :rule="{ required: item.isNull === '1', message: `${item.propName}不可为空`, trigger: formatTrigger(item.propType) }">
+      <template #label>
+        <div class="mb-5">{{ item.propName }}</div>
+        <div v-if="item.description" class="text-sub-title">{{ item.description }}</div>
+      </template>
+      <component :is="renderField(item)"></component>
+    </n-form-item>
+    <n-button type="primary" block>
+      保存，进入下一步
+    </n-button>
+  </template>
+</n-collapse-item>
+```
+
+``` js [JavaScript]
+// 不重要的js
+const formatTrigger = (type) => {
+  if (!type) return undefined
+  const trigger = ['blur']
+  if (type === 'text') {
+    trigger.push('input')
+  } else if (type === 'select') {
+    trigger.push('change')
+  }
+  return trigger
+}
+
+// 核心
+const renderComponent = (component, props) => {
+  return h(component, props);
+}
+
+// 核心
+const renderField = (item) => {
+  const com = {
+    text: markRaw(NInput)
+  }
+  return renderComponent(com[item.propType], {
+    'onUpdate:value': (val) => {
+      model.value[item.propKey] = val
+    }
+  }, {})
+}
+```
+
+:::
+
+
 ## n-tree 懒加载实例
 
 ::: code-group
