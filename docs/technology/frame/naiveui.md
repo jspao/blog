@@ -94,6 +94,7 @@ const renderField = (item) => {
     text: markRaw(NInput)
   }
   return renderComponent(com[item.propType], {
+    value: model.value[item.propKey],
     'onUpdate:value': (val) => {
       model.value[item.propKey] = val
     }
