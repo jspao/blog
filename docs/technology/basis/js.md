@@ -2,6 +2,32 @@
 
 JavaScript（简称“JS”）是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。
 
+## 如何动态创建key
+
+数据实例
+
+```json
+[
+    {
+        "propKey": "phone",
+        "propName": "手机号",
+        "propType": "text",
+    }
+]
+```
+
+```js
+fieldOptions.value.map(item => {
+    return {
+        [item.propKey]: model.value[item.propKey]
+    };
+});
+```
+
+**解释：**
+1. 使用方括号 [item.propKey] 可以动态地将 item.propKey 的值作为对象的键名。
+2. 然后用 model.value[item.propKey] 作为键值，返回一个新的对象。
+
 ## 对象结构排除特定字段
 
 如果你希望在构建 item 对象时，从 ele 中排除一些特定字段，可以使用解构赋值和对象扩展运算符来实现这一点。
