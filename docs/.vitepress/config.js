@@ -45,6 +45,7 @@ export default {
         text: "常用第三方入口",
         items: [
           { text: "微信公众平台", link: "https://mp.weixin.qq.com/" },
+          {text: "微信公众平台(test)", link:'https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login'},
           { text: "JSON格式化", link: "https://www.sojson.com/" },
           { text: "在线工具", link: "https://tool.lu/" },
           { text: "Vue3官网", link: "https://cn.vuejs.org/api/" },
