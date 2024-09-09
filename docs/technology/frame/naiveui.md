@@ -2,6 +2,94 @@
 
 NaiveUI 特殊场景记录，Naive UI 是一个 Vue3 的组件库。【[传送门](https://www.naiveui.com/zh-CN/os-theme/components/button)】
 
+## n-dynamic-input 实例
+
+::: code-group
+
+```vue [Vue]
+<template>
+  <n-form>
+      <n-form-item path="porpDefaultValue" :show-feedback="false">
+        <template #label>
+          <div class="mb-5">默认字段值</div>
+          <div class="text-sub-title">在前端展现给用户，用于说明改字段内容如何填写</div>
+        </template>
+        <div>
+          <n-space vertical :size="16">
+            <template v-for="(ele, pidx) in filterList">
+              <div class="bg-gray-50 p-10">
+                <n-dynamic-input :default-value="ele">
+                  <template #default="{ value }">
+                    <n-space :wrap='false'>
+                      <n-input v-model:value="value.input" type="text" />
+                      <n-select :style="{ width: '150px' }" v-model:value="value.formula" :options="formulaOptions" />
+                      <n-input v-model:value="value.comparison" type="text" />
+                    </n-space>
+                  </template>
+                  <template #action="{ index }">
+                    <n-space class="ml-15">
+                      <n-button type="error" :disabled="pidx === 0 && index === 0" @click="() => onRemove(pidx, index)">
+                        <div class="i-ph:trash"></div>
+                      </n-button>
+                      <n-button type="primary" @click="onCreate(pidx)">
+                        <div class="i-ph:plus-circle"></div>
+                        <div class="ml-8">
+                          并且
+                        </div>
+                      </n-button>
+                    </n-space>
+                  </template>
+                </n-dynamic-input>
+              </div>
+            </template>
+          </n-space>
+          <div class="mt-16">
+            <n-button type="primary" dashed block @click="onCreateItem">
+              <div class="i-ph:plus-circle"></div>
+              <div class="ml-8">
+                或
+              </div>
+            </n-button>
+          </div>
+        </div>
+      </n-form-item>
+    </n-form>
+</template>
+```
+
+```js [JavaScript]
+const filterList = ref([[{ input: null, formula: null, comparison: null }]])
+
+const formulaOptions = [
+  {
+    label: '表达式大于',
+    value: '17'
+  },
+  {
+    label: '表达式大于等于',
+    value: '18'
+  },
+]
+
+function onCreate(pidx) {
+  filterList.value[pidx].push({ input: null, formula: null, comparison: null })
+}
+
+function onRemove(pidx, cidx) {
+  if (filterList.value[pidx].length === 1) {
+    filterList.value.splice(pidx, 1)
+  } else {
+    filterList.value[pidx].splice(cidx, 1)
+  }
+}
+
+function onCreateItem() {
+  filterList.value.push([{ input: null, formula: null, comparison: null }])
+}
+```
+
+:::
+
 ## h 函数内组件插槽用法
 
 ```js
