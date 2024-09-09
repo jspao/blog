@@ -4,6 +4,8 @@ NaiveUI 特殊场景记录，Naive UI 是一个 Vue3 的组件库。【[传送�
 
 ## n-dynamic-input 实例
 
+自定义n-dynamic-inputzone，实现动态添加和删除。
+
 ::: code-group
 
 ```vue [Vue]
