@@ -2,6 +2,12 @@
 
 Linux 常用基本命令
 
+- 获取临时的root权限执行命令
+
+```sh
+sudo su root
+```
+
 - 删除当前文件夹下所有文件
 ```sh
 rm -rf *
