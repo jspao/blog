@@ -38,3 +38,18 @@ git bash 进入指定工程，然后执行命令 `find . -name "._*"|xargs rm`
 ## UI设计
 
 - DIN Alternate 用在数字上，很好用
+
+## 堡垒机提权及上传文件步骤
+
+``` sh
+# 进入指定项目目录
+# 创建目录
+mkdir node
+# 给目录设置权限，就可以上传文件了
+sudo chmod 777 node
+# 进入node文件夹
+cd node
+# 提升root权限,输入对应root密码
+sudo su root
+# 最才可使用服务器内置的一些指令如：pnpm yarn ...
+```
