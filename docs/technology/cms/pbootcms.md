@@ -419,6 +419,32 @@ layui.use(["element", "upload"], function () {
         </tr>
       </table>
     </form>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/dynamic-form.js"></script>
+    <script>
+      function uploadCaseFile(index, field) {
+        currentInput = $(`#${field}${index}`);
+        iconBox = $(`#ico_box${index}`);
+
+        let obj = { id: `${field}${index}` };
+
+        coverupload.currentInput = currentInput;
+        coverupload.currentIndex = index;
+        coverupload.currentField = field;
+        if (field === "tbusiness_license") {
+          coverupload.iconBox = iconBox;
+        }
+
+        if (["tcurriculum_vitae", "tresearch_summary"].includes(field)) {
+          Object.assign(obj, { accept: "file", acceptMime: null });
+        }
+
+        coverupload.reload(obj);
+
+        $("#onUpload").click();
+      }
+    </script>
   </body>
 </html>
 ```
@@ -698,30 +724,6 @@ jQuery(document).ready(function ($) {
   // 渲染初始化数据
   renderInitialForms();
 });
-```
-
-```js [JavaScript]
-function uploadCaseFile(index, field) {
-  currentInput = $(`#${field}${index}`);
-  iconBox = $(`#ico_box${index}`);
-
-  let obj = { id: `${field}${index}` };
-
-  coverupload.currentInput = currentInput;
-  coverupload.currentIndex = index;
-  coverupload.currentField = field;
-  if (field === "tbusiness_license") {
-    coverupload.iconBox = iconBox;
-  }
-
-  if (["tcurriculum_vitae", "tresearch_summary"].includes(field)) {
-    Object.assign(obj, { accept: "file", acceptMime: null });
-  }
-
-  coverupload.reload(obj);
-
-  $("#onUpload").click();
-}
 ```
 
 :::

@@ -250,7 +250,7 @@ export default {
 
 ```js [main.js]
 import * as echarts from "echarts";
-import china from "./views/wisdomSupervise/compontents/mapJson.json"; // 导入china包
+import china from "./mapJson.json"; // 导入china包
 echarts.registerMap("china", china);
 
 // Vue.prototype.$echarts = echarts
